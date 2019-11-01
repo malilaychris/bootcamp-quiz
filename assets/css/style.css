@@ -95,6 +95,20 @@ ul {
   background: #016795;
 }
 
+.answer__confirm {
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .timer {
   text-align: right;
+}
+
+.score {
+  padding: 1em 0;
+  font-size: 2em;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
 }

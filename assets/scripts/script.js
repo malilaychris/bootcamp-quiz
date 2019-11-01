@@ -1,5 +1,6 @@
 let introductionSection = document.getElementById('introductionSection');
 let questionSection = document.getElementById('questionSection');
+let resultsSection = document.getElementById('resultsSection');
 
 let startQuizButton = document.getElementById('startQuizButton');
 let answerButton = [];
@@ -8,16 +9,24 @@ for(let i = 0; i < 4; i++) {
 }
 
 let questionText = document.getElementById('questionText');
+let timerText = document.getElementById('timerText');
+let scoreText = document.getElementById('scoreText');
 
 defaultPage();
 
 let questionIndex = 0;
+let timeInitial = 50;
+let time;
 
 function defaultPage() {
   introductionSection.style.display = 'block';
   questionSection.style.display = 'none';
+  resultsSection.style.display = 'none';
 
   startQuizButton.addEventListener('click', startQuiz);
+  for(let i = 0; i < 4; i++) {
+    answerButton[i].addEventListener('click', nextQuestion);
+  }
 }
 
 function startQuiz() {
@@ -25,6 +34,14 @@ function startQuiz() {
   questionSection.style.display = 'block';
 
   showQuestion(questionIndex);
+  timer();
+  
+  time = setInterval(timer, 1000);
+}
+
+function timer() {
+  timeInitial--;
+  timerText.textContent = "Time: " + timeInitial;
 }
 
 function showQuestion() {
@@ -34,11 +51,18 @@ function showQuestion() {
   }
 }
 
-for(let i = 0; i < 4; i++) {
-  answerButton[i].addEventListener('click', nextQuestion);
+function nextQuestion() {
+  if(questionIndex < questions.length - 1) {
+    questionIndex++;
+    showQuestion(questionIndex);
+  } else {
+    getResults();
+  }
 }
 
-function nextQuestion() {
-  questionIndex++;
-  showQuestion(questionIndex);
+function getResults() {
+  questionSection.style.display = 'none';
+  resultsSection.style.display = 'block';
+
+  scoreText.textContent = "Final Score: " + timeInitial;
 }
