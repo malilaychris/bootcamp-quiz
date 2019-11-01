@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>NBA Quiz</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Rubik:400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1><a href="" class="title">NBA Quiz</a></h1>
+  </header>
+  <main>
+    <div class="container">
+
+      <div class="question__section" id="questionSection">
+        <div class="question" id="questionText"></div>
+        <ul class="answers">
+          <li class="answer__item"><button class="answer__button" id="answerButton0"></button></li>
+          <li class="answer__item"><button class="answer__button" id="answerButton1"></button></li>
+          <li class="answer__item"><button class="answer__button" id="answerButton2"></button></li>
+          <li class="answer__item"><button class="answer__button" id="answerButton3"></button></li>
+        </ul>
+        <div class="timer">Timer: 0</div>
+      </div>
+
+      <div class="introduction__section" id="introductionSection">
+        <div class="introduction">This is a five question timed quiz on NBA trivia. Final score is calculated by time remaining. Click 'Start Quiz' to begin!</div>
+        <button class="button__default" id="startQuizButton">Start Quiz</button>
+      </div>
+
+      <div class="results_section" id="resultsSection">
+
+      </div>
+
+    </div>
+  </main>
+  <script type="text/javascript" src="assets/scripts/questions.js"></script>
+  <script type="text/javascript" src="assets/scripts/script.js"></script>
+</body>
+</html>
