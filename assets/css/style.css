@@ -134,3 +134,7 @@ ul {
   margin-top: 2em;
   padding-bottom: 0.4em;
 }
+
+.high-scores__list {
+  text-transform: uppercase;
+}
